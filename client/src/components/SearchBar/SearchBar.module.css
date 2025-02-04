@@ -1,0 +1,13 @@
+.customBtn {
+    background-color: #0aca34ad !important;
+    border-color: #0aca34ad !important;
+}
+
+.customBtn:hover {
+    background-color: #0aca34 !important;
+    border-color: #0aca34 !important;
+}
+
+.padding_top {
+    padding-top: 11rem !important;
+}

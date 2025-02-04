@@ -1,0 +1,32 @@
+.formContainer {
+    width: 100%;
+
+}
+
+.customForm {
+    background-color: #10242d;
+    border-radius: 10px;
+    width: 70% !important;
+    padding: 10px 35px !important;
+    margin-bottom: 5rem;
+}
+
+.customButton {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.customButton:hover {
+    background-color: #374151;
+    transform: scale(1.05);
+}
+
+.customButton:active {
+    transform: scale(0.95);
+}

@@ -1,0 +1,25 @@
+.col {
+    width: 40rem;
+    height: 25rem;
+}
+
+.customCard {
+    background-color: #10242d !important;
+    color: white !important;
+    padding: 15px 15px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.sizeImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width:600px) {
+    .dir_col {
+        flex-direction: column;
+    }
+}

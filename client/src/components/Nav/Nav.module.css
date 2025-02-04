@@ -1,0 +1,41 @@
+.nav {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navlink {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.customList {
+    text-align: center;
+    width: 100%;
+    text-wrap: nowrap;
+    flex-grow: 1;
+}
+
+.link {
+    background-color: #10242d;
+    padding: 8px 15px;
+    border-radius: 6px;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    display: block;
+    width: 170px;
+
+}
+
+.link:hover {
+    background-color: #0aca34ad;
+    color: white;
+    transform: scale(1.05);
+}

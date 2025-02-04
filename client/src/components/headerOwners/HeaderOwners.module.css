@@ -1,0 +1,56 @@
+.header {
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.menuItem {
+    cursor: pointer;
+    background-color: #F7F3E9 !important;
+    font-weight: bold !important;
+}
+
+.menuItem:hover {
+    background-color: #0aca34ad !important;
+}
+
+.customPopover {
+    background-color: #F7F3E9 !important;
+}
+
+.customPopover .popover-body {
+    padding: 0;
+
+}
+
+.customPopover .list-group-item {
+    border: none;
+
+}
+
+.customPopover .list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+
+.customMenuButton {
+    background-color: #0aca34ad !important;
+    border-color: #0aca34ad !important;
+}
+
+.customMenuButton:hover {
+    background-color: #0aca34 !important;
+    border-color: #0aca34 !important;
+}
+
+.custom_margin_left {
+    margin-left: 18%;
+    flex-grow: 1;
+    color: antiquewhite;
+}

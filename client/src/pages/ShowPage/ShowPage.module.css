@@ -1,0 +1,48 @@
+.showPageContainer {
+    background-color: #F7F3E9;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+}
+
+
+.showPageContainer::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: grey;
+
+}
+
+.showPageContainer::-webkit-scrollbar-thumb {
+    width: 3px;
+    border-radius: 999px;
+    background-color: rgb(187, 185, 185);
+}
+
+.btn {
+    background-color: #0aca34ad !important;
+    border-color: #0aca34ad !important;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0aca34 !important;
+    border-color: #0aca34 !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.btn:active,
+.btn-active {
+    background-color: #0aca34 !important;
+    border-color: #0aca34 !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    transform: scale(1.05);
+}

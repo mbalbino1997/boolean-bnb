@@ -1,0 +1,28 @@
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+    /* Centra orizzontalmente il logo */
+    align-items: center;
+    /* Centra verticalmente */
+    max-height: 100%;
+    /* Assicura che non esca dalla dimensione del contenitore */
+    /* Nasconde qualsiasi elemento che fuoriesce */
+}
+
+.logoImage {
+    max-width: 100%;
+    /* Non permette che il logo sia più largo del contenitore */
+    max-height: 100%;
+    margin: 10px 0;
+    width: 80px;
+    /* Non permette che il logo sia più alto del contenitore */
+    object-fit: contain;
+    /* Adatta il logo alle proporzioni del contenitore */
+    cursor: pointer;
+}
+
+.logoImage:hover {
+    padding: 1px;
+    opacity: 85%;
+}

@@ -1,0 +1,23 @@
+.voteContainer {
+    font-size: 1rem;
+    color: #333;
+
+}
+
+.stars {
+    color: #fbbf24;
+
+}
+
+.star {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: inherit;
+
+}
+
+@media (max-width:480px) {
+    .d_none {
+        display: none;
+    }
+}

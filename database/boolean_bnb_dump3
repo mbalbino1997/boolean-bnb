@@ -1,0 +1,211 @@
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
+--
+-- Host: localhost    Database: boolean_bnb
+-- ------------------------------------------------------
+-- Server version	8.0.40
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `messages` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `text` text NOT NULL,
+  `owner_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `send_by_user` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `owner_id` (`owner_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`owner_id`) REFERENCES `owners` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `messages_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `messages`
+--
+
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` VALUES (1,'Buongiorno, sono interessato all\'appartamento.',1,1,'2025-02-02 09:26:15',1),(2,'La villa è disponibile per la prossima estate?',2,2,'2025-02-02 09:26:15',1),(3,'Vorrei sapere se lo chalet accetta animali domestici.',3,3,'2025-02-02 09:26:15',1),(4,'La villetta è libera a giugno?',4,4,'2025-02-02 09:26:15',1),(5,'È possibile visitare la baita prima di prenotare?',5,5,'2025-02-02 09:26:15',1),(6,'Buonasera, volevo sapere se ci sono due letti singoli o un letto matrimoniale',6,6,'2025-02-02 09:26:15',1),(7,'attendo una risposta',6,6,'2025-02-02 09:26:15',1),(8,'Prova per verificare i nuovi campi',6,6,'2025-02-02 09:27:16',1),(9,'Prova con altro user',6,4,'2025-02-02 10:12:23',1),(10,'Flusso di comunicazione col proprietario',2,6,'2025-02-03 12:17:26',1),(11,'Ciao proprietario!',6,6,'2025-02-03 12:19:28',1),(38,'C\'è la vasca da bagno?',10,6,'2025-02-04 07:15:03',1),(39,'si ma senza idromassaggio',10,6,'2025-02-04 07:15:47',0),(40,'C\'è il riscaldamento?',10,6,'2025-02-04 08:26:04',1),(41,'si a pavimento',10,6,'2025-02-04 08:27:16',0),(42,'C\'è il riscaldamento?',10,6,'2025-02-04 08:42:01',1),(43,'si a pavimento',10,6,'2025-02-04 08:43:13',0),(44,'C\'è la vasca da bagno?',10,6,'2025-02-04 09:12:05',1),(45,'Si con idromassaggio',10,6,'2025-02-04 09:13:20',0);
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `owners`
+--
+
+DROP TABLE IF EXISTS `owners`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `owners` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `owners`
+--
+
+LOCK TABLES `owners` WRITE;
+/*!40000 ALTER TABLE `owners` DISABLE KEYS */;
+INSERT INTO `owners` VALUES (1,'Mario','Rossi','mario.rossi@example.com','asdsadasda'),(2,'Luca','Bianchi','luca.bianchi@example.com','sadsadasd'),(3,'Giulia','Verdi','giulia.verdi@example.com','e2131eeq'),(4,'Anna','Neri','anna.neri@example.com','12e21ewqe'),(5,'Paolo','Gialli','paolo.gialli@example.com','eqwee1221'),(6,'pinco','pallino','pinco.pallino@email.com','$2b$10$CjoFW1ocPvwlooelNJX2UuXFcXzOY7ImTQlMb/dyCjUYDyqiA.6wC'),(7,'pape','rino','pape.rino@email.com','$2b$10$1.avPRBn9XYXoWWtwjzO3uU.CsV9vGKw7M7wVndtPvCdeCWpwWq2i'),(8,'Marco','Gialli','marco.gialli@example.com','$2b$10$B537dnQohNTQs2NP/WnYHOiLjB6b1yxq6yfv3WyZuWy5GWYBZ/8Dm'),(10,'Chiara','Conti','chiara.conti@example.com','$2b$10$4ugfOnpffJFoEmblMrTk/u1UxFCWsUS1MpdSu9Q64mX.aUIm3bPua'),(11,'Giulia','Moretti','giulia.moretti@example.com','$2b$10$iLgcbgqct8Ro3YtNb9FzXueEclwKqSwAxAHuLXztHI8R7RO3id9i6'),(12,'Stefano','Ricci','stefano.ricci@example.com','$2b$10$k88CxTyjdId/DRChJCRDdeINJYPPn.WZ5H1DJN7UBNd.oCj2Klx2K'),(13,'Elisa','Greco','elisa.greco@example.com','$2b$10$b4iJKk9WnzEKLpXiwuHRleq.ieXDEbTII5pwLYqCLdHlXI4VfLKw.'),(14,'Francesco','De Luca','francesco.deluca@example.com','$2b$10$EoSKpI/QNldlDumTWW0HlOEgEiU8SYE9HGKwRE2IqMU3XwWo6vsMO'),(15,'Martina','Russo','martina.russo@example.com','$2b$10$i.UbaMRoPXcoKJ1B.hL.nu5lPfifWPNmVciQnlgzCC91xR2cWzWFq'),(16,'Giovanni','Esposito','giovanni.esposito@example.com','$2b$10$BPAnv1uMJzv05s2A7ErDKO5wDJBm12LV60tHmzi6tOWikjbPBch76'),(17,'Sara','Romano','sara.romano@example.com','$2b$10$LBFY6V58I5tbzOaKBnjjqeHmVh2V5ksRf27aHHu1qavwPZmAS7FUm'),(18,'Matteo','Bruno','matteo.bruno@example.com','$2b$10$iXH7w/iVMLufgo2YTSkjfeRQC9eujNykY2pgmdusq.YKYR8ntWiq.'),(19,'Valeria','Grassi','valeria.grassi@example.com','$2b$10$o3mGrQancA2Ahyw3OTWqMe60l7dK7dCuNHmSmUzMJlCwOKwlY970e'),(21,'Alessandro','Pini','alessandro.pini@example.com','$2b$10$vCuUXTkkDHTAn1bdgEFxcOUI4smzQD3fuRCZjG7hOwFfYwW2sVTjq'),(22,'Federica','Orlando','federica.orlando@example.com','$2b$10$MgXBlm4c8nDIfKyyJHXe2eUKHme.DrivmIKxDqddFBY9Gw3VbuHDC'),(23,'Andrea','Leone','andrea.leone@example.com','$2b$10$Alm8A8trJ8XO1YrUDyH1/O7MbvFzVl.E0b2reg7.YBYW/WeG3BNSa'),(24,'Roberta','Barbieri','roberta.barbieri@example.com','$2b$10$t.7nkA625rzSEeJ6d2uhfurYsHnql.O9c7CVPuocnivxTTZL3yg/y');
+/*!40000 ALTER TABLE `owners` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `properties`
+--
+
+DROP TABLE IF EXISTS `properties`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `properties` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `number_of_rooms` int NOT NULL,
+  `number_of_beds` int NOT NULL,
+  `number_of_bathrooms` int NOT NULL,
+  `size` int NOT NULL,
+  `full_address` text NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `house_type` enum('appartamento','casa indipendente','villa','villetta a schiera','chalet','baita') DEFAULT NULL,
+  `vote` int NOT NULL,
+  `owner_id` int NOT NULL,
+  `price_per_day` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `owner_id` (`owner_id`),
+  CONSTRAINT `properties_ibfk_1` FOREIGN KEY (`owner_id`) REFERENCES `owners` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `properties_chk_1` CHECK ((`vote` between 0 and 100))
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `properties`
+--
+
+LOCK TABLES `properties` WRITE;
+/*!40000 ALTER TABLE `properties` DISABLE KEYS */;
+INSERT INTO `properties` VALUES (1,'Appartamento Moderno',3,2,1,80,'Via Roma 10, Milano','Milano','modern.jpg','appartamento',41,1,70.90),(2,'Villa Panoramica',6,4,3,200,'Via delle Colline 5, Firenze','Firenze','villa.jpg','villa',92,2,110.00),(3,'Chalet in Montagna',4,3,2,120,'Località Alpi 12, Trento','Trento','chalet.jpg','chalet',91,3,700.00),(4,'Villetta con Giardino',5,3,2,150,'Via dei Fiori 8, Torino','Torino','villetta.jpg','villetta a schiera',94,4,60.00),(5,'Baita Rustica',2,1,1,60,'Località Bosco 3, Bolzano','Bolzano','baita.jpg','baita',70,5,100.00),(6,'villetta indipendente',3,1,1,75,'via pincopalla','Lecce',NULL,'villa',20,2,60.00),(7,'villa con giardino',4,2,2,140,'via a caso','Napoli','villacongiardino.jpg','villa',40,6,120.00),(8,'bilocale centrale',2,1,1,70,'viale italia','Roma','bilocalecentrale.jpg','appartamento',36,6,200.00),(29,'Appartamento elegante in centro',3,2,1,80,'Via Roma 10, Milano','Milano','image1.jpg','appartamento',4,1,120.50),(30,'Villa con piscina privata',6,4,3,200,'Via dei Colli 25, Firenze','Firenze','image2.jpg','villa',5,2,400.00),(31,'Casa indipendente spaziosa',4,3,2,150,'Via Verdi 12, Torino','Torino','image3.jpg','casa indipendente',4,3,180.00),(32,'Villetta a schiera moderna',5,3,2,140,'Via Dante 8, Bologna','Bologna','image4.jpg','villetta a schiera',3,4,150.00),(33,'Chalet di montagna',4,4,2,130,'Strada Alpina 7, Cortina d\'Ampezzo','Cortina d\'Ampezzo','image5.jpg','chalet',5,5,250.00),(34,'Baita rustica immersa nel verde',3,3,1,90,'Valle Verde, Trento','Trento','image6.jpg','baita',4,6,130.00),(35,'Appartamento vista mare',2,2,1,70,'Lungomare 45, Napoli','Napoli','image7.jpg','appartamento',5,7,100.00),(36,'Casa indipendente con giardino',4,3,2,160,'Via Libertà 30, Palermo','Palermo','image8.jpg','casa indipendente',4,8,190.00),(37,'Villa storica con parco',8,6,4,350,'Via Antica 1, Roma','Roma','image9.jpg','villa',5,10,700.00),(38,'Villetta a schiera accogliente',4,2,2,120,'Via del Sole 15, Bari','Bari','image10.jpg','villetta a schiera',3,11,140.00),(39,'Chalet esclusivo con sauna',5,5,3,200,'Strada Neve 12, Bolzano','Bolzano','image11.jpg','chalet',5,12,320.00),(40,'Baita romantica',2,2,1,60,'Val del Cuore, Aosta','Aosta','image12.jpg','baita',4,13,120.00),(41,'Appartamento centrale',3,2,1,85,'Piazza Duomo 3, Milano','Milano','image13.jpg','appartamento',4,14,110.00),(42,'Casa indipendente panoramica',5,4,2,170,'Via Alta 22, Genova','Genova','image14.jpg','casa indipendente',4,15,210.00),(43,'Villa moderna con piscina',7,5,4,250,'Via Elegante 10, Venezia','Venezia','image15.jpg','villa',5,16,500.00),(44,'Villetta a schiera vicino al parco',4,3,2,130,'Via Parco 5, Verona','Verona','image16.jpg','villetta a schiera',3,17,160.00),(45,'Chalet in posizione strategica',6,6,3,220,'Montagna 18, Livigno','Livigno','image17.jpg','chalet',5,18,270.00),(46,'Baita accogliente e rustica',3,3,1,80,'Bosco Vecchio, Belluno','Belluno','image18.jpg','baita',4,19,140.00),(47,'Appartamento economico e pratico',2,1,1,60,'Via Garibaldi 4, Pisa','Pisa','image19.jpg','appartamento',3,24,80.00),(48,'Casa indipendente per famiglie',5,4,2,180,'Via Felicità 12, Catania','Catania','image20.jpg','casa indipendente',4,21,220.00),(49,'casa a caso',2,1,1,100,'via tufarello','ginosa','images.jpg','villa',0,23,100.00),(51,'Villetta a schiera in periferia',3,2,1,120,'Via garibaldi 123','Milano','villettaaschiera.jpg','villetta a schiera',0,10,200.00),(52,'Appartamento in centro',4,3,2,100,'Viale Italia 50','Roma','image99.jpg','villa',0,10,100.00),(53,'appartamento spazioso in centro',5,3,2,150,'viale dei giardini 32','venezia','appartamentovenezia.jpg','appartamento',0,10,200.00),(57,'Attico in centro',4,2,1,130,'Via Roma 11','Torino','atticoincentrotorino.jpg','appartamento',0,10,360.00);
+/*!40000 ALTER TABLE `properties` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rents`
+--
+
+DROP TABLE IF EXISTS `rents`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rents` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `property_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `rent_start` date NOT NULL,
+  `rent_end` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `property_id` (`property_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `rents_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `rents_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rents`
+--
+
+LOCK TABLES `rents` WRITE;
+/*!40000 ALTER TABLE `rents` DISABLE KEYS */;
+INSERT INTO `rents` VALUES (1,1,1,'2025-01-01','2025-01-15'),(2,2,2,'2025-02-01','2025-02-10'),(3,3,3,'2025-03-01','2025-03-15'),(4,4,4,'2025-04-01','2025-04-15'),(5,5,5,'2025-05-01','2025-05-10'),(6,1,2,'2025-07-12','2025-08-01'),(7,1,6,'2025-09-11','2025-09-23'),(8,2,6,'2025-02-02','2025-02-03'),(9,7,6,'2025-02-03','2025-02-05'),(10,2,3,'2025-02-05','2025-02-12'),(16,2,4,'2025-02-05','2025-02-10');
+/*!40000 ALTER TABLE `rents` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `reviews`
+--
+
+DROP TABLE IF EXISTS `reviews`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reviews` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `vote` tinyint NOT NULL,
+  `text` text NOT NULL,
+  `rent_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `rent_id_UNIQUE` (`rent_id`),
+  CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`rent_id`) REFERENCES `rents` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `reviews_chk_1` CHECK ((`vote` between 0 and 10))
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reviews`
+--
+
+LOCK TABLES `reviews` WRITE;
+/*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
+INSERT INTO `reviews` VALUES (1,8,'Ottimo appartamento, molto moderno.',1),(2,9,'Vista mozzafiato, altamente consigliata.',2),(3,7,'Comfort elevato, ma un po\' caro.',3),(4,6,'Buon rapporto qualità-prezzo.',4),(5,5,'Rustico e affascinante, ma poco spazioso.',5),(6,7,'Abbastanza spazioso ma da ristrutturare',6),(11,8,'spaziosissima ma un po troppo costosa per il mio stipendio',7),(14,10,'Tutto come da descrizione',8),(15,10,'Tutto come previsto',9),(16,9,'tutto perfetto',10),(22,8,'Molto spaziosa!!!',16);
+/*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Marco','Esposito','marco.esposito@example.com'),(2,'Sofia','Ferrari','sofia.ferrari@example.com'),(3,'Elisa','Ricci','elisa.ricci@example.com'),(4,'Lorenzo','Conti','lorenzo.conti@example.com'),(5,'Martina','De Luca','martina.deluca@example.com'),(6,'Massimo','Balbino','rmassimo.balbino@gmail.com');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-02-04 13:53:18

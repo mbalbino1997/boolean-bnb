@@ -1,0 +1,31 @@
+.customButton {
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+     top: -240px;
+     transform: translateY(-4px) !important;
+     z-index: 10;
+}
+
+
+.tooltip {
+     position: absolute;
+     bottom: 210px;
+     right: 20%;
+     transform: translateX(50%);
+     background-color: #28a745;
+     color: white;
+     padding: 5px 10px;
+     border-radius: 10px;
+     font-size: 0.9rem;
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity 0.3s ease;
+     z-index: 10;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.customButton:hover+.tooltip {
+     opacity: 1;
+     pointer-events: auto;
+
+}
