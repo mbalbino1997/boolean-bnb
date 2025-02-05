@@ -1,13 +1,24 @@
 .customBtn {
-    background-color: #0aca34ad !important;
-    border-color: #0aca34ad !important;
+    background-color: #bc3636 !important;
+    border-color: whitesmoke !important;
+    border-radius: 999px !important;
+    width: 60px !important;
+    aspect-ratio: 1/1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .customBtn:hover {
-    background-color: #0aca34 !important;
-    border-color: #0aca34 !important;
+    background-color: #b90d0d !important;
+    border-color: #bd2b2b !important;
 }
 
 .padding_top {
     padding-top: 11rem !important;
+}
+
+.bar {
+    height: 40px;
+
 }

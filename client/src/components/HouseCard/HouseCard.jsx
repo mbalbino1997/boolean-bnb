@@ -35,17 +35,19 @@ export default function HouseCard({ content }) {
             <div className="card-body">
                 <div className="d-flex justify-content-between">
                     <div>
-                        <h5 className="card-title">{title}</h5>
-                        <p className="card-text">{full_address}</p>
+                        <h5 className="card-title fw-bold fs-5">{title}</h5>
+                        <p className="card-text fs-6 text-muted">{full_address}</p>
 
                     </div>
                     <div>
-                        <h5>{price_per_day.toString().replace('.', ',')} &#x20AC;</h5>
-                        <p>giorno</p>
-
+                        <h5 className="text-nowrap">
+                            <strong>{price_per_day.toString().replace('.', ',')} &#x20AC;</strong>
+                            <span class="small text-muted"> /notte</span>
+                        </h5>
                     </div>
+
                 </div>
-                <p className="card-text">{city}</p>
+                <p className="card-text fs-7"><strong>Città: </strong>{city}</p>
             </div>
         </div>
 

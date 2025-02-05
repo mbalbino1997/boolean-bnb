@@ -1,17 +1,17 @@
 .customMenuButton {
-    background-color: #0aca34ad !important;
-    border-color: #0aca34ad !important;
+    background-color: #f2eade !important;
+    border-color: #f2eade !important;
     margin-right: 30px;
     padding: 8px 15px;
     border-radius: 8px;
-    color: white;
+    color: #bc3636;
     text-decoration: none !important;
     transition: all 0.3s ease-in-out;
 }
 
 .customMenuButton:hover {
-    background-color: #0aca34 !important;
-    border-color: #0aca34 !important;
+    background-color: #f2eade !important;
+    border-color: #f2eade !important;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
@@ -20,7 +20,10 @@
     top: 0;
     right: 0;
     left: 0;
-    background-color: #2c3e50;
+    background: url("../../assets/background.svg") no-repeat center/cover;
+
+
+
     height: 70px;
     z-index: 999;
     display: flex;

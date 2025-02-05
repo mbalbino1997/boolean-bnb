@@ -24,10 +24,10 @@
 }
 
 .link {
-    background-color: #10242d;
+    background-color: #16a085;
     padding: 8px 15px;
     border-radius: 6px;
-    color: white;
+    color: whitesmoke;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     display: block;
     width: 170px;
@@ -35,7 +35,7 @@
 }
 
 .link:hover {
-    background-color: #0aca34ad;
+    background-color: #09836b;
     color: white;
     transform: scale(1.05);
 }

@@ -5,11 +5,13 @@
 
 .hover {
     cursor: pointer;
+    background-color: whitesmoke !important;
     transition: all 0.3s ease-in-out;
+    color: #34495e !important;
 }
 
 
 .hover:hover {
     transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+
 }

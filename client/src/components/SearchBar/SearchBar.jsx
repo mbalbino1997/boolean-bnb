@@ -50,20 +50,36 @@ export default function SearchBar() {
 
     return (
         <div className={`container  mb-5 ${style.padding_top}`}>
-            <div className="input-group">
+            <div className="input-group d-flex align-items-center">
                 <input
                     type="text"
-                    className="form-control"
+                    className={`form-control mx-5 rounded ${style.bar}`}
                     placeholder="Inserisci la città..."
                     name="city"
                     value={searchedCity}
                     onChange={(e) => setSearchedCity(e.target.value)}
                 />
                 <button
-                    className={`btn text-white ${style.customBtn}`}
+                    className={`text-white mx-3 ${style.customBtn}`}
                     onClick={handleSearch}
                 >
-                    Cerca
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        style={{ width: "40px", height: "40px" }} // Stili inline
+                        className="text-white"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                        />
+                    </svg>
+
+
                 </button>
             </div>
         </div>
