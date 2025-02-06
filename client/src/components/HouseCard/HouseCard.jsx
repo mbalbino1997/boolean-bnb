@@ -42,7 +42,7 @@ export default function HouseCard({ content }) {
                     <div>
                         <h5 className="text-nowrap">
                             <strong>{price_per_day.toString().replace('.', ',')} &#x20AC;</strong>
-                            <span class="small text-muted"> /notte</span>
+                            <span className="small text-muted"> /notte</span>
                         </h5>
                     </div>
 

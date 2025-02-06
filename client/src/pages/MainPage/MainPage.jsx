@@ -16,13 +16,19 @@ const popularHouses = [
 
 export default function MainPage() {
     const settings = {
-        dots: true,
+        dots: false,
+        arrows: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
+        centerMode: false,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        fade: true,
+        vertical: true,
+        verticalSwiping: true,
+        centerPadding: "0px",
     };
 
     return (
@@ -30,7 +36,7 @@ export default function MainPage() {
             <HeaderMain />
             <div className={style.hero}>
                 <div className={style.heroOverlay}></div>
-                <h1 className={style.heroTitle}>Trova la casa perfetta per la tua prossima vacanza !!!</h1>
+                {/* <h1 className={style.heroTitle}>Trova la casa perfetta per la tua prossima vacanza !!!</h1> */}
                 <Slider {...settings} className={style.carousel}>
                     {popularHouses.map((house) => (
                         <div key={house.id} className={style.slide}>

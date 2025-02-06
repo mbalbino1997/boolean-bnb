@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url("../../assets/background.svg") no-repeat center/cover;
+    background: url("../../assets/newhero.svg") no-repeat center/cover;
     background-size: cover;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .carousel {
-    width: 800px;
+    width: 1000px;
     max-width: 100%;
     position: relative;
 }
@@ -61,13 +61,17 @@
 .slide {
     display: flex;
     justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
+
 
 .houseImage {
     width: 900px;
     min-height: 300px;
     max-height: 400px;
     object-fit: cover;
-    border-radius: 999px;
-    opacity: 0.7;
+    border-radius: 180px;
+    z-index: 1;
 }
