@@ -14,8 +14,8 @@
     max-width: 100%;
     /* Non permette che il logo sia più largo del contenitore */
     max-height: 100%;
-    margin: 10px 0;
-    width: 80px;
+    margin: 5px 0;
+    width: 100px;
     /* Non permette che il logo sia più alto del contenitore */
     object-fit: contain;
     /* Adatta il logo alle proporzioni del contenitore */

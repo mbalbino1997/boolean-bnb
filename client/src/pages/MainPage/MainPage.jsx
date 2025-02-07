@@ -45,6 +45,29 @@ export default function MainPage() {
                         </div>
                     ))}
                 </Slider>
+                <div className={style.under_image}>
+                    <div className="d-flex justify-content-center gap-3">
+                        <img className={style.icon} src="icon1.png" alt="" />
+                        <div className="d-flex flex-column align-items-center justify-content-center">
+                            <h1 className={style.icon_title}>Conferma immediata</h1>
+                            <p className={style.icon_subtitle}>Ricevi subito la conferma della tua prenotazione via email o SMS, in modo semplice e veloce.</p>
+                        </div>
+                    </div>
+                    <div className="d-flex justify-content-center gap-3">
+                        <img className={style.icon} src="icon2.png" alt="" />
+                        <div className="d-flex flex-column align-items-center justify-content-center">
+                            <h1 className={style.icon_title}>Miglior prezzo garantito</h1>
+                            <p className={style.icon_subtitle}>Trovi un prezzo più basso altrove? Ti rimborsiamo la differenza!</p>
+                        </div>
+                    </div>
+                    <div className="d-flex justify-content-center gap-3">
+                        <img className={style.icon} src="icon3.png" alt="" />
+                        <div className="d-flex flex-column align-items-center justify-content-center">
+                            <h1 className={style.icon_title}>Le più amate dai clienti</h1>
+                            <p className={style.icon_subtitle}>Prenota la tua vacanza tra le 100 strutture preferite dai nostri ospiti.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <SearchBar />
             <HouseList />

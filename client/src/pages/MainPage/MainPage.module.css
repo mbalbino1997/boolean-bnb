@@ -45,8 +45,8 @@
 /* Titolo Hero */
 .hero_title_one,
 .hero_title_two {
+    font-family: 'Codec Pro', sans-serif;
     position: absolute;
-
     font-size: 3rem;
     font-weight: bold;
     color: white;
@@ -97,4 +97,45 @@
     object-fit: cover;
     border-radius: 0px;
     z-index: 1;
+}
+
+
+.under_image {
+
+    background-color: #f7e3ca;
+    display: flex !important;
+    height: 100px !important;
+    width: 100% !important;
+    padding-top: 110px;
+    justify-content: center !important;
+    align-content: flex-end;
+    align-items: flex-end;
+    position: relative !important;
+    bottom: 0px !important;
+    z-index: 999 !important;
+    gap: 150px !important;
+}
+
+.icon {
+    height: 50px;
+    width: auto;
+}
+
+.icon_title {
+    font-size: 1.2rem;
+    color: whitesmoke;
+    padding: 0px 5px;
+    background: url("../../assets/background.svg") no-repeat center/cover;
+    border-radius: 999px;
+    width: 190px;
+    text-align: center;
+}
+
+.icon_subtitle {
+    color: #bc3636;
+    text-align: center;
+    width: 300px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+
 }
