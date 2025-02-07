@@ -20,58 +20,81 @@
     background-color: red;
 }
 
+/* HERO SECTION */
 .hero {
     position: relative;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url("../../assets/newhero.svg") no-repeat center/cover;
-    background-size: cover;
 }
 
+/* Overlay per contrasto */
 .heroOverlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-
-
+    background: rgba(0, 0, 0, 0.2);
+    /* Leggera oscurità per migliorare contrasto */
 }
 
-.heroTitle {
-    position: relative;
+/* Titolo Hero */
+.hero_title_one,
+.hero_title_two {
+    position: absolute;
+
     font-size: 3rem;
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    z-index: 100;
 }
 
+.hero_title_one {
+    top: 5%;
+    left: 5%;
+}
+
+.hero_title_two {
+    bottom: 15%;
+    right: 5%;
+}
+
+/* CAROUSEL */
 .carousel {
-    width: 1000px;
+    width: 100%;
     max-width: 100%;
     position: relative;
+    top: 4%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    /* Lo slider ora occupa metà dell'hero */
+    background-color: #f7e3ca;
 }
 
+/* Slide dello slider */
 .slide {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: flex-start;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
 }
 
-
-
+/* Immagini dello slider */
 .houseImage {
-    width: 900px;
-    min-height: 300px;
-    max-height: 400px;
+    width: 100%;
+    height: 100%;
+    max-height: 40vh;
+    /* Occupa metà dell'hero */
     object-fit: cover;
-    border-radius: 180px;
+    border-radius: 0px;
     z-index: 1;
 }

@@ -36,7 +36,8 @@ export default function MainPage() {
             <HeaderMain />
             <div className={style.hero}>
                 <div className={style.heroOverlay}></div>
-                {/* <h1 className={style.heroTitle}>Trova la casa perfetta per la tua prossima vacanza !!!</h1> */}
+                <h1 className={style.hero_title_one}>Prenota con noi</h1>
+                <h1 className={style.hero_title_two}>La vacanza dei tuoi sogni</h1>
                 <Slider {...settings} className={style.carousel}>
                     {popularHouses.map((house) => (
                         <div key={house.id} className={style.slide}>
