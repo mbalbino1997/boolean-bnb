@@ -50,11 +50,19 @@
     font-size: 3rem;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow:
+        2px 2px 10px rgba(0, 0, 0, 0.5),
+        /* Ombra nera */
+        -1px -1px 0px orange,
+        /* Contorno arancione sottile */
+        1px -1px 0px orange,
+        -1px 1px 0px orange,
+        1px 1px 0px orange;
     padding: 20px;
     border-radius: 10px;
     z-index: 100;
 }
+
 
 .hero_title_one {
     top: 5%;
@@ -101,7 +109,7 @@
 
 
 .under_image {
-
+    font-family: 'Codec Pro', sans-serif;
     background-color: #f7e3ca;
     display: flex !important;
     height: 100px !important;
