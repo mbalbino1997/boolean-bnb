@@ -70,7 +70,7 @@
 }
 
 .hero_title_two {
-    bottom: 15%;
+    bottom: 22%;
     right: 5%;
 }
 
@@ -120,8 +120,9 @@
     align-items: flex-end;
     position: relative !important;
     bottom: 0px !important;
-    z-index: 999 !important;
+    z-index: 100 !important;
     gap: 150px !important;
+    padding-bottom: 35px;
 }
 
 .icon {

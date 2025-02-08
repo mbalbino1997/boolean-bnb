@@ -94,8 +94,8 @@ function App() {
       }}>
 
         <Routes>
+          <Route path="/" element={<MainPage />} />
           <Route element={<MainLayout />}>
-            <Route path="/" element={<MainPage />} />
             <Route path="/:slug" element={<ShowPage />} />
             <Route path='/owners' element={<OwnersPage />} />
             <Route path='/owners/:id' element={<OwnerShowpage />} />

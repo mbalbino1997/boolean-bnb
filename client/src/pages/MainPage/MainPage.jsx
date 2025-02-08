@@ -1,5 +1,4 @@
 import HouseList from "../../components/HouseList/Houselist";
-import SearchBar from "../../components/SearchBar/SearchBar";
 import HeaderMain from "../../components/HeaderMain/HeaderMain";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -69,7 +68,7 @@ export default function MainPage() {
                     </div>
                 </div>
             </div>
-            <SearchBar />
+
             <HouseList />
         </div>
     );

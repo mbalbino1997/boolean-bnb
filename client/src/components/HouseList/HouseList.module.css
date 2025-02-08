@@ -1,0 +1,61 @@
+.house_type_bar {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f2eade;
+    padding: 20px;
+    color: #bc3636;
+    font-weight: bold;
+    z-index: 200;
+}
+
+.search_sidebar {
+    position: sticky;
+    top: 80px;
+    /* Stessa altezza della barra orizzontale */
+    left: 0;
+    width: 300px;
+    height: calc(100vh - 80px);
+    /* Mantiene la sidebar alta fino in fondo */
+    background-color: #f2eade;
+    padding: 20px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search_sidebar input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search_sidebar button {
+    width: 90%;
+    padding: 10px;
+    background-color: #bc3636;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    margin-left: 320px !important;
+    /* Sposta la lista delle case a destra della sidebar */
+    padding-top: 20px !important;
+}
+
+.main_wrapper {
+    display: flex;
+    flex-direction: row;
+    /* Sidebar e contenuto principale affiancati */
+}
