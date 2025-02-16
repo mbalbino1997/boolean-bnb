@@ -1,6 +1,8 @@
 .house_type_bar {
     position: sticky;
-    top: 0;
+    top: 30px;
+    left: 0;
+    right: 0;
     height: 80px;
     display: flex;
     justify-content: space-around;
@@ -12,13 +14,25 @@
     z-index: 200;
 }
 
+.search {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.search img {
+    width: 30px;
+    aspect-ratio: 1/1;
+}
+
 .search_sidebar {
     position: sticky;
-    top: 80px;
+    top: 30px;
     /* Stessa altezza della barra orizzontale */
     left: 0;
     width: 300px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 30px);
     /* Mantiene la sidebar alta fino in fondo */
     background-color: #f2eade;
     padding: 20px;
@@ -31,21 +45,26 @@
 }
 
 .search_sidebar input {
-    width: 90%;
+    width: 75%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #f33709 !important;
+    border-radius: 15px;
 }
 
+
+
 .search_sidebar button {
-    width: 90%;
-    padding: 10px;
-    background-color: #bc3636;
+    width: 18%;
+    padding: 5px;
+    background-color: #c74028;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 999px;
     cursor: pointer;
+}
+
+.search_sidebar button:hover {
+    transform: scale(1.1);
 }
 
 .container {
