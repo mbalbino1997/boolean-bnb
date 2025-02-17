@@ -109,7 +109,7 @@ export default function Filters() {
 
             {/* Contenitore dei filtri */}
             {filterActive && (
-                <div className={`${style.filters} p-3 text-white`}>
+                <div className={`${style.filters}`}>
 
 
                     {/* Filtro: Numero di stanze  2*/}

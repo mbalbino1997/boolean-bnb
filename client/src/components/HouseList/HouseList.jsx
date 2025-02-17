@@ -5,6 +5,7 @@ import HouseCard from "../HouseCard/HouseCard"
 import { Link, useSearchParams, useLocation } from "react-router-dom"
 import Loader from "../Loader/Loader"
 import style from "./HouseList.module.css"
+import Filters from "../Filters/Filters"
 
 export default function HouseList() {
     const { houses, setHouses, searchedCity, fetchHouses, setSearchedCity, filters, setFilters, setSearchParams } = useContext(GlobalContext)
@@ -60,6 +61,7 @@ export default function HouseList() {
                             onChange={(e) => setSearchedCity(e.target.value)} />
                         <button onClick={handleSearch}><img src="search.png" alt="" /></button>
                     </div>
+                    <Filters />
                 </div>
                 <div className="flex-grow-1">
                     <div className={style.house_type_bar}>
@@ -73,7 +75,7 @@ export default function HouseList() {
                     <div className="container">
                         <div className="row d-flex flex-wrap row-gap-5 mt-5 pb-5">
                             {houses.map((house, i) => (
-                                <div key={i} className="col-lg-4 col-md-6 col-xs-12">
+                                <div key={i} className="col-lg-3 col-md-6 col-xs-12">
                                     <Link className="text-decoration-none text-dark" to={`/${house.title.replace(/ /g, '-')}`}>
                                         <HouseCard content={house} />
                                     </Link>

@@ -6,6 +6,8 @@
     flex-grow: 1;
     gap: 10px;
     font-weight: bold;
+    color: #bc3636;
+    width: 100%;
 
 }
 
@@ -47,7 +49,6 @@
     width: 30px;
     aspect-ratio: 1/1;
     border-radius: 5px;
-    background-color: #0aca34ad;
     color: white;
     font-weight: bold;
     display: flex;
@@ -60,31 +61,27 @@
 }
 
 .filter_button:hover {
-    background-color: #0aca34ad;
     border: none;
     color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 .fil {
-    background-color: #16a085;
     padding: 8px 15px;
     border-radius: 6px;
     color: whitesmoke;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     display: block;
-    width: 170px;
-    margin: 0 auto;
+    width: 90%;
     text-wrap: nowrap;
     font-weight: bold;
     text-align: center;
     max-width: 100%;
-    margin-bottom: 20px;
-
+    background-color: #ff5757;
+    border-radius: 25px;
+    margin: 0 auto;
 }
 
 .fil:hover {
-    background-color: #0d6654;
-    color: white;
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
