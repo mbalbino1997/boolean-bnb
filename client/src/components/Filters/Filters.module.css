@@ -12,13 +12,13 @@
 }
 
 .fil_btn:hover {
-    background-color: #10242d75;
+    background-color: #bbc6cafa;
 }
 
 .filter_options {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 5px;
 }
 
@@ -28,27 +28,28 @@
 }
 
 .filter_button {
+    color: #c74028 !important;
     padding: 2px 3px;
     width: 30px;
     aspect-ratio: 1/1;
-    border-radius: 5px;
+    border-radius: 999px;
     background-color: white;
-    color: black;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: none;
+    border: 1px solid #c74028;
     box-sizing: border-box;
     white-space: nowrap;
     transition: all 0.3s ease-in-out;
+    background-color: #fff7ee;
 }
 
 .filter_active_button {
     padding: 2px 3px;
     width: 30px;
     aspect-ratio: 1/1;
-    border-radius: 5px;
+    border-radius: 999px;
     color: white;
     font-weight: bold;
     display: flex;
@@ -58,12 +59,15 @@
     box-sizing: border-box;
     white-space: nowrap;
     transition: all 0.3s ease-in-out;
+    background-color: #ff5757;
+    color: #fff7ee;
 }
 
 .filter_button:hover {
     border: none;
-    color: white;
+    background-color: #ff5757;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    color: #fff7ee;
 }
 
 .fil {

@@ -58,13 +58,10 @@ export default function Filters() {
     const debouncedHandleFilterChange = useDebounce(handleFilterChange, 300);
 
     const toggleFilter = (filterName) => {
-        setActiveFilters((prev) => {
-            const newState = Object.keys(prev).reduce((acc, key) => {
-                acc[key] = key === filterName ? !prev[key] : false; // Apre solo il filtro cliccato e chiude gli altri
-                return acc;
-            }, {});
-            return newState;
-        });
+        setActiveFilters(prev => ({
+            ...prev,
+            [filterName]: !prev[filterName] // Inverti solo il filtro cliccato
+        }));
     };
 
     useEffect(() => {
@@ -118,7 +115,7 @@ export default function Filters() {
                         <FontAwesomeIcon
                             icon={faSortDown}
                             rotation={activeFilters.rooms ? 0 : 270}
-                            style={{ color: "#ffffff" }}
+                            style={{ color: "#c74028" }}
                         />
                     </button>
                     {activeFilters.rooms && (
@@ -137,7 +134,7 @@ export default function Filters() {
                         <FontAwesomeIcon
                             icon={faSortDown}
                             rotation={activeFilters.beds ? 0 : 270}
-                            style={{ color: "#ffffff" }}
+                            style={{ color: "#c74028" }}
                         />
                     </button>
                     {activeFilters.beds && (
@@ -156,7 +153,7 @@ export default function Filters() {
                         <FontAwesomeIcon
                             icon={faSortDown}
                             rotation={activeFilters.bathrooms ? 0 : 270}
-                            style={{ color: "#ffffff" }}
+                            style={{ color: "#c74028" }}
                         />
                     </button>
                     {activeFilters.bathrooms && (
@@ -175,7 +172,7 @@ export default function Filters() {
                         <FontAwesomeIcon
                             icon={faSortDown}
                             rotation={activeFilters.size ? 0 : 270}
-                            style={{ color: "#ffffff" }}
+                            style={{ color: "#c74028" }}
                         />
                     </button>
                     {activeFilters.size && <DoubleRangeSlider name="size" min={0} value={selectedSize} max={3000} unit="m²" onValueChange={handleSizeChange} />}
@@ -186,7 +183,7 @@ export default function Filters() {
                         <FontAwesomeIcon
                             icon={faSortDown}
                             rotation={activeFilters.price ? 0 : 270}
-                            style={{ color: "#ffffff" }}
+                            style={{ color: "#c74028" }}
                         />
                     </button>
                     {activeFilters.price && <DoubleRangeSlider name="price" min={0} max={5000} value={selectedPrice} unit="€" onValueChange={handlePriceChange} />}
