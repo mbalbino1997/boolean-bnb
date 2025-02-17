@@ -51,6 +51,10 @@
     border-radius: 15px;
 }
 
+.search_sidebar input:focus {
+    border: 1px solid #f33709 !important;
+    outline: none !important;
+}
 
 
 .search_sidebar button {
