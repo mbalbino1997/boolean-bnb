@@ -65,12 +65,12 @@ export default function HouseList() {
                 </div>
                 <div className="flex-grow-1">
                     <div className={style.house_type_bar}>
-                        <button>Appartamento</button>
-                        <button>Casa indipendente</button>
-                        <button>Villa</button>
-                        <button>Villetta a schiera</button>
-                        <button>Chalet</button>
-                        <button>Baita</button>
+                        <button className={style.btn_img}><img className={style.img} src="appartamento.jpeg" alt="" />Appartamento</button>
+                        <button className={style.btn_img}>Casa indipendente</button>
+                        <button className={style.btn_img}><img className={style.img} src="villa.jpeg" alt="" />Villa</button>
+                        <button className={style.btn_img}>Villetta a schiera</button>
+                        <button className={style.btn_img}>Chalet</button>
+                        <button className={style.btn_img}>Baita</button>
                     </div>
                     <div className="container">
                         <div className="row d-flex flex-wrap row-gap-5 mt-5 pb-5">

@@ -91,3 +91,14 @@
     flex-direction: row;
     /* Sidebar e contenuto principale affiancati */
 }
+
+.btn_img {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.img {
+    width: 40px;
+    aspect-ratio: 1/1;
+}

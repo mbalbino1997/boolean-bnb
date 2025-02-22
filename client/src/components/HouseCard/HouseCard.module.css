@@ -8,10 +8,43 @@
     background-color: whitesmoke !important;
     transition: all 0.3s ease-in-out;
     color: #34495e !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    border: 1px solid #bc3636 !important;
+    color: #bc3636 !important;
 }
 
 
 .hover:hover {
     transform: scale(1.02);
 
+}
+
+
+.star_container {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    /* Dimensione della stella */
+    height: 40px;
+}
+
+.star_icon {
+    color: gold;
+    font-size: 45px;
+}
+
+.star_text {
+    position: absolute;
+    top: 60%;
+    /* Sposta leggermente più in basso */
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    /* Colore del testo */
+    text-align: center;
+    width: 100%;
+    /* Per evitare overflow */
 }

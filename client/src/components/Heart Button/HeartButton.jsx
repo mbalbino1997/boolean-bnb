@@ -41,9 +41,9 @@ export default function HeartButton({ vote, id }) {
                 className={`btn btn-light position-absolute end-0  m-2 p-2 rounded-circle ${style.customButton}`}
             >
                 {tempLiked ? (
-                    <SolidHeartIcon className="text-danger" style={{ height: "1.4rem" }} />
+                    <SolidHeartIcon className="text-danger" style={{ height: "1.4rem", color: "#bc3636" }} />
                 ) : (
-                    <OutlineHeartIcon className="text-dark" style={{ height: "1.4rem" }} />
+                    <OutlineHeartIcon style={{ height: "1.4rem", color: "#bc3636" }} />
                 )}
             </button>
 

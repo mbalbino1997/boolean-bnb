@@ -4,7 +4,9 @@
      transform: translateY(-4px) !important;
      z-index: 10;
      background-color: rgba(249, 228, 198, 0.574) !important;
-     border: none !important;
+
+     border: 1px solid #bc3636 !important;
+     color: #bc3636 !important;
 }
 
 
@@ -23,6 +25,7 @@
      transition: opacity 0.3s ease;
      z-index: 10;
      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
 }
 
 
