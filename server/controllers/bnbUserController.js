@@ -6,20 +6,20 @@ const { confirmEmail } = require('./emailController');
 
 
 function index(req, res) {
-    let sql = "SELECT * FROM properties"
+    let sql = "SELECT p.*, COALESCE(AVG(re.vote), 0) AS avg_vote  FROM properties AS p  LEFT JOIN rents AS r ON p.id = r.property_id  LEFT JOIN reviews AS re ON re.rent_id = r.id  GROUP BY p.id"
     const params = [];
 
     console.log(req.query.city, req.query.rooms, req.query.beds, req.query.bathrooms, req.query.size, req.query.price)
     // città
     if (req.query.city) {
-        sql += " WHERE city LIKE ?"
+        sql += " HAVING city LIKE ?"
         params.push(`%${req.query.city}%`)
     }
 
     // rooms
     if (req.query.rooms) {
 
-        sql === "SELECT * FROM properties" ? sql += " WHERE number_of_rooms " : sql += " AND number_of_rooms ";
+        sql === "SELECT p.*, COALESCE(AVG(re.vote), 0) AS avg_vote  FROM properties AS p  LEFT JOIN rents AS r ON p.id = r.property_id  LEFT JOIN reviews AS re ON re.rent_id = r.id  GROUP BY p.id" ? sql += " HAVING number_of_rooms " : sql += " AND number_of_rooms ";
         if (req.query.rooms === "5+") {
             sql += ">= ?"
             params.push(5)
@@ -31,7 +31,7 @@ function index(req, res) {
     // beds
     if (req.query.beds) {
 
-        sql === "SELECT * FROM properties" ? sql += " WHERE number_of_beds " : sql += " AND number_of_beds ";
+        sql === "SELECT p.*, COALESCE(AVG(re.vote), 0) AS avg_vote  FROM properties AS p  LEFT JOIN rents AS r ON p.id = r.property_id  LEFT JOIN reviews AS re ON re.rent_id = r.id  GROUP BY p.id" ? sql += " HAVING number_of_beds " : sql += " AND number_of_beds ";
         if (req.query.beds === "4+") {    // bisogna gestire gli intervalli 
             sql += ">= ?"
             params.push(4)
@@ -50,7 +50,7 @@ function index(req, res) {
 
     if (req.query.bathrooms) {
 
-        sql === "SELECT * FROM properties" ? sql += " WHERE number_of_bathrooms " : sql += " AND number_of_bathrooms ";
+        sql === "SELECT p.*, COALESCE(AVG(re.vote), 0) AS avg_vote  FROM properties AS p  LEFT JOIN rents AS r ON p.id = r.property_id  LEFT JOIN reviews AS re ON re.rent_id = r.id  GROUP BY p.id" ? sql += " HAVING number_of_bathrooms " : sql += " AND number_of_bathrooms ";
         if (req.query.bathrooms === "3+") {
             sql += ">= 3"
 
@@ -65,7 +65,7 @@ function index(req, res) {
 
     if (req.query.size && Array.isArray(req.query.size) && req.query.size.length === 2) {
 
-        sql === "SELECT * FROM properties" ? sql += " WHERE size " : sql += " AND size ";
+        sql === "SELECT p.*, COALESCE(AVG(re.vote), 0) AS avg_vote  FROM properties AS p  LEFT JOIN rents AS r ON p.id = r.property_id  LEFT JOIN reviews AS re ON re.rent_id = r.id  GROUP BY p.id" ? sql += " HAVING size " : sql += " AND size ";
 
         const min = parseInt(req.query.size[0], 10)
         const max = parseInt(req.query.size[1], 10)
@@ -84,7 +84,7 @@ function index(req, res) {
     }
     if (req.query.price && Array.isArray(req.query.price) && req.query.price.length === 2) {
 
-        sql === "SELECT * FROM properties" ? sql += " WHERE price_per_day " : sql += " AND price_per_day ";
+        sql === "SELECT p.*, COALESCE(AVG(re.vote), 0) AS avg_vote  FROM properties AS p  LEFT JOIN rents AS r ON p.id = r.property_id  LEFT JOIN reviews AS re ON re.rent_id = r.id  GROUP BY p.id" ? sql += " HAVING price_per_day " : sql += " AND price_per_day ";
 
         const min = parseInt(req.query.price[0], 10)
         const max = parseInt(req.query.price[1], 10)
@@ -105,7 +105,7 @@ function index(req, res) {
 
 
 
-    sql += " ORDER BY vote DESC"
+    sql += " ORDER BY p.vote DESC"
 
     // Paginazione
     /*const page = parseInt(req.query.page, 10) || 1; // Default page 1
@@ -124,7 +124,6 @@ function index(req, res) {
             const formattedImage = result.image?.split(' ').join('_')
             result.image = `http://localhost:3000/images/${formattedImage}`
         })
-
         /*connection.query("SELECT COUNT(*) AS total FROM properties", (err, countResults) => {
             if (err) return res.status(500).json({ error: "Database count query failed" });
 
