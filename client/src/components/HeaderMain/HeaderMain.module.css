@@ -15,6 +15,55 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
+.first_modal {
+    position: relative;
+}
+
+.btn_modal {
+
+    color: #bc3636;
+    text-decoration: none;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.modal::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    /* Posiziona la freccia sopra il modale */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #bc363673;
+    /* Colore della freccia */
+}
+
+.btn_modal:hover {
+    background-color: #f2eade !important;
+}
+
+.modal {
+    border: 1px solid #bc3636;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    bottom: -84px;
+    left: 50%;
+    transform: translateX(-62%);
+}
+
 .header {
     position: fixed;
     top: 0;
